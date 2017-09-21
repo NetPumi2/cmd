@@ -23,6 +23,8 @@ function mac() {
   esac
 }
 __showParamListForMac(){
+  echo "\n\t====== mac ...-params"
+
   echo "\n\t===================== mac "
   echo "hide-files \t hide all hidden files"
   echo "show-files \t show all hidden files"

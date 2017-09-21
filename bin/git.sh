@@ -20,7 +20,7 @@ function gi() {
 }
 
 __showParamListForGit(){
+  echo "\n\t====== gi ...-params"
   echo "\n\t===================== git tree"
   echo "-l \t visualizing branch topology "
-
 }

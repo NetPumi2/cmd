@@ -1,19 +1,30 @@
+alias spp="__spotifyPlay"
+alias sps="__spotifyStop"
+alias spu="__spotifyVolumeUp"
+alias spd="__spotifyVolumeDown"
+alias spq="__spotifyQuit"
 
-
-alias gitkraken="__openGitKraken"
-alias kraken="__openGitKraken"
-
-alias th="__runThumberServer"
-alias th-nt="__runThumberServerInNewTab"
-
-function __openGitKraken() {
-  open -a GitKraken
+function __spotifyPlay() {
+  spotify play
 }
-
-function __runThumberServerInNewTab() {
-  tab thumbor
+function __spotifyStop() {
+  spotify pause
 }
-
-function __runThumberServer() {
-  thumbor
+function __spotifyVolumeUp() {
+  spotify vol up
+}
+function __spotifyVolumeDown() {
+  spotify vol down
+}
+function __spotifyQuit() {
+  spotify quit
+}
+__showAppAliases(){
+  echo "\n\t===================== Aliases -just write "
+  echo "\n\t====== SPOTIFY"
+  echo "spp \t spotify play"
+  echo "sps \t spotify stop"
+  echo "spu \t spotify volume up"
+  echo "spd \t spotify volume down"
+  echo "spq \t spotify quit"
 }

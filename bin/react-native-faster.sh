@@ -75,13 +75,13 @@ function rn() {
 
       if [ $1 == "-ae-nt" ]; then
           if [ -z $2 ]; then
-            { tab emulator @NexusOne25 }
+            { tab emulator @Nexus_5_API_25 }
           else
             { tab emulator $2 }
           fi
         else
           if [ -z $2 ]; then
-            { emulator @NexusOne25 }
+            { emulator @Nexus_5_API_25 }
           else
             { emulator $2 }
           fi
@@ -111,7 +111,8 @@ esac
 }
 
 __showParamListForRN(){
-  echo "Made by Šály..."
+  echo "\n\t====== rn ...-params"
+
   echo "\n\t===================== React Native start"
   echo "-s \t start react-native server"
   echo "-s-nt \t start react-native server in new terminal"
