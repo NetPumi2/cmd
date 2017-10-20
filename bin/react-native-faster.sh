@@ -43,11 +43,11 @@ function rn() {
 
    "-ai" | "-ai-nt")
          if [ $1 == "-ai-nt" ]; then
-           {tab react-native run-ios}
            {tab react-native run-android}
+           {tab react-native run-ios}
          else
-           {react-native run-ios}
            {react-native run-android}
+           {react-native run-ios}
          fi
       ;;
 
