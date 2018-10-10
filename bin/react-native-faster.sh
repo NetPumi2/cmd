@@ -14,7 +14,11 @@ function rn() {
 
   case $1 in
     "--reset" )
-            { watchman watch-del-all && rm -rf node_modules && yarn install && yarn start -- --reset-cache}
+          if [ $2 == "-all" ]; then
+           { rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-* && watchman watch-del-all && npm cache clean --force && npm cache verify && yarn cache clean && rm -rf ios/build && rm -rf node_modules/ && yarn install && yarn start -- --reset-cache}
+          else
+            { yarn cache clean && watchman watch-del-all && rm -rf node_modules && yarn install && yarn start -- --reset-cache } 
+          fi
       ;;
 
     "-l-nt" | "-l" )
@@ -51,6 +55,16 @@ function rn() {
          fi
       ;;
 
+    "-ia" | "-ia-nt")
+         if [ $1 == "-ai-nt" ]; then
+           {tab react-native run-ios}
+           {tab react-native run-android}
+         else
+           {react-native run-ios}
+           {react-native run-android}
+         fi
+      ;;
+
       "-ar" | "-ar-nt")
             if [ $1 == "-ar-nt" ]; then
               { adb reverse tcp:8081 tcp:8081 | tab react-native run-android}
@@ -75,15 +89,15 @@ function rn() {
 
       if [ $1 == "-ae-nt" ]; then
           if [ -z $2 ]; then
-            { tab emulator @Nexus_5_API_25 }
+            { tab cd $(dirname $(which emulator)) ./emulator @Nexus_5_API_25 }
           else
-            { tab emulator $2 }
+            { tab cd $(dirname $(which emulator)) ./emulator $2 }
           fi
         else
           if [ -z $2 ]; then
-            { emulator @Nexus_5_API_25 }
+            { cd $(dirname $(which emulator)) ./emulator @Nexus_5_API_25 }
           else
-            { emulator $2 }
+            { cd $(dirname $(which emulator)) ./emulator $2 }
           fi
       fi
     ;;
@@ -129,6 +143,8 @@ __showParamListForRN(){
   echo "-i-nt \t build IOS in new terminal ";
   echo "-ai \t build Android and IOS"
   echo "-ai-nt \t build Android and IOS in new terminals"
+  echo "-ia \t build IOS and Android"
+  echo "-ia-nt \t build IOS and Android in new terminals"
   echo "\n\t===================== Android Emulators"
   echo "-ae '@DeviceName' \t run Android emulator.\n\t\t\t '@DeviceName' default: @NexusOne25  "
   echo "-ae-nt '@DeviceName' \t run Android emulator in new terminal.\n\t\t\t '@DeviceName' default: @NexusOne25  "

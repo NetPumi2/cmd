@@ -1,0 +1,8 @@
+.tab.dirty {
+  background-origin: border-box;
+  background-image: repeating-linear-gradient(
+    60deg,
+    transparent,
+    #ff0000 10px
+  );
+}

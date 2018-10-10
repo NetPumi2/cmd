@@ -4,6 +4,7 @@ source /Users/salek/Documents/scripty/bin/application-aliases.sh
 source /Users/salek/Documents/scripty/bin/android.sh
 source /Users/salek/Documents/scripty/bin/git.sh
 source /Users/salek/Documents/scripty/bin/mac.sh
+source /Users/salek/Documents/scripty/bin/yarn.sh
 
 
 i(){
@@ -15,6 +16,8 @@ i(){
   __showParamListForMac
   echo "====================================================RN=====================================================";
   __showParamListForRN
+  echo "====================================================YARN=====================================================";
+  __showParamListForYarn
   echo "====================================================ALIASSES===============================================";
   __showAppAliases
 }
