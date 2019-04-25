@@ -1,10 +1,10 @@
 #---------------------------- muje SCRIPTY end
-source /Users/salek/Documents/scripty/bin/react-native-faster.sh
-source /Users/salek/Documents/scripty/bin/application-aliases.sh
-source /Users/salek/Documents/scripty/bin/android.sh
-source /Users/salek/Documents/scripty/bin/git.sh
-source /Users/salek/Documents/scripty/bin/mac.sh
-source /Users/salek/Documents/scripty/bin/yarn.sh
+source ./react-native-faster.sh
+source ./application-aliases.sh
+source ./android.sh
+source ./git.sh
+source ./mac.sh
+source ./yarn.sh
 
 
 i(){
